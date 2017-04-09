@@ -1,5 +1,11 @@
 # Development roadmap
 
+## v0.0.1 (CHG# tableName)
+
+* `\Module.php` (31)
+* `\models\Category.php` (32)
+
+
 ## v0.0.0 (initial commit)
 
 Features of this version:

@@ -25,6 +25,10 @@ class Module extends \yii\base\Module
      * @var string module name
      */
     public static $moduleName = 'category';
+    /**
+     * @var string table name
+     */
+    public $tableName = '{{%category}}';
 
     /**
      * @return static

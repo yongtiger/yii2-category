@@ -14,6 +14,7 @@ namespace yongtiger\category\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use yongtiger\category\Module;
 
 /**
  * This is the model class for table "{{%category}}".
@@ -28,7 +29,7 @@ class Category extends ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%category}}';
+        return Module::instance()->tableName;
     }
 
     /**
