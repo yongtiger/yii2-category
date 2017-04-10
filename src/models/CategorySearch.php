@@ -15,6 +15,7 @@ namespace yongtiger\category\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yongtiger\category\Module;
 
 /**
  * CategorySearch represents the model behind the search form of `yongtiger\category\models\Category`.
@@ -50,7 +51,9 @@ class CategorySearch extends Category
      */
     public function search($params)
     {
-        $query = Category::find();
+        ///[v0.0.2 (CHG# Module config:model classes)]
+        $categoryModelClass = Module::instance()->categoryModelClass;
+        $query = $categoryModelClass::find();
 
         // add conditions that should always apply here
 

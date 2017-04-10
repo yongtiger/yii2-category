@@ -60,6 +60,7 @@ class Category extends ActiveRecord
      */
     public static function find()
     {
-        return new CategoryQuery(get_called_class());
+        ///[v0.0.2 (CHG# Module config:model classes)]
+        return Yii::createObject(Module::instance()->categoryQueryClass, [get_called_class()]);
     } 
 }

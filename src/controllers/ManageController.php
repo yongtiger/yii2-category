@@ -16,8 +16,7 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yongtiger\category\models\Category;
-use yongtiger\category\models\CategorySearch;
+use yongtiger\category\Module;
 
 /**
  * ManageController implements the CRUD actions for Category model.
@@ -45,7 +44,7 @@ class ManageController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CategorySearch();
+        $searchModel = Yii::createObject(Module::instance()->categorySearchModelClass); ///[v0.0.2 (CHG# Module config:model classes)]
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -73,7 +72,7 @@ class ManageController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Category();
+        $model = Yii::createObject(Module::instance()->categoryModelClass);/////////
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -125,7 +124,9 @@ class ManageController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Category::findOne($id)) !== null) {
+        ///[v0.0.2 (CHG# Module config:model classes)]
+        $categoryModelClass = Module::instance()->categoryModelClass;
+        if (($model = $categoryModelClass::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

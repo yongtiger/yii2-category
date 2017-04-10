@@ -1,5 +1,8 @@
 # Development roadmap
 
+## v0.0.2 (CHG# Module config:model classes)
+
+
 ## v0.0.1 (CHG# tableName)
 
 * `\Module.php` (31)

@@ -1,4 +1,4 @@
-# yii2-category v0.0.1 (CHG# tableName)
+# yii2-category v0.0.2 (CHG# Module config:model classes)
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-category/v/stable)](https://packagist.org/packages/yongtiger/yii2-category)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-category/downloads)](https://packagist.org/packages/yongtiger/yii2-category) 
