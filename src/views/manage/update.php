@@ -1,14 +1,16 @@
 <?php
 
 use yii\helpers\Html;
+use yongtiger\category\Module;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\category\models\Category */
 
-$this->title = 'Update Category: ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Categories', 'url' => ['index']];
+$this->title = Module::t('message', 'Update Category: ') . $model->title;
+$this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Categories'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = Module::t('message', 'Update');
+
 ?>
 <div class="category-update">
 

@@ -69,8 +69,8 @@ class Category extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'title' => 'Title',
+            'id' => Module::t('message', 'ID'),
+            'title' => Module::t('message', 'Title'),
         ];
     }
 

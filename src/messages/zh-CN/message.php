@@ -20,4 +20,28 @@
  */
 return [
 
+	///\vendor\yongtiger\yii2-category\src\models\Category.php
+	'ID' => 'ID',
+	'Title' => '名称',
+
+	///\vendor\yongtiger\yii2-category\src\views\default\index.php
+	'Categories' => '目录',
+
+	///\vendor\yongtiger\yii2-category\src\views\manage\_form.php
+	'Save' => '保存',
+
+	///\vendor\yongtiger\yii2-category\src\views\manage\_search.php
+	'Search' => '保存',
+	'Reset' => '保存',
+
+	///\vendor\yongtiger\yii2-category\src\views\manage\view.php
+	'Are you sure you want to delete this item?' => '您确定要删除此项吗？',
+	'Update' => '更新',
+	'Delete' => '删除',
+
+	///\vendor\yongtiger\yii2-category\src\views\manage\update.php
+	'Update Category: ' => '更新目录：',
+
+	///\vendor\yongtiger\yii2-category\src\views\manage\index.php
+	'Create Category' => '创建目录',
 ];
