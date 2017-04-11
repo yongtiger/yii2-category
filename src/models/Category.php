@@ -32,6 +32,26 @@ class Category extends ActiveRecord
         return Module::instance()->tableName;
     }
 
+    ///[v0.0.3 (ADD# creocoder\nestedsets)]
+    public function behaviors() {
+        return [
+            'tree' => [
+                'class' => \creocoder\nestedsets\NestedSetsBehavior::className(),
+                // 'treeAttribute' => 'tree',
+                // 'leftAttribute' => 'lft',
+                // 'rightAttribute' => 'rgt',
+                // 'depthAttribute' => 'depth',
+            ],
+        ];
+    }
+    public function transactions()
+    {
+        return [
+            self::SCENARIO_DEFAULT => self::OP_ALL,
+        ];
+    }
+    ///[http:www.brainbook.cc]
+
     /**
      * @inheritdoc
      */
@@ -53,7 +73,7 @@ class Category extends ActiveRecord
             'title' => 'Title',
         ];
     }
-    
+
     /**
      * @inheritdoc
      * @return CategoryQuery the active query used by this AR class.
@@ -62,5 +82,5 @@ class Category extends ActiveRecord
     {
         ///[v0.0.2 (CHG# Module config:model classes)]
         return Yii::createObject(Module::instance()->categoryQueryClass, [get_called_class()]);
-    } 
+    }
 }

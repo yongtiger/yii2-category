@@ -1,5 +1,11 @@
 # Development roadmap
 
+## v0.0.3 (ADD# creocoder\nestedsets)
+
+* `\models\Category.php`
+* `\models\CategoryQuery.php`
+
+
 ## v0.0.2 (CHG# Module config:model classes)
 
 

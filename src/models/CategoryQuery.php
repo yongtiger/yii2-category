@@ -21,6 +21,13 @@ use yii\db\ActiveQuery;
  */
 class CategoryQuery extends ActiveQuery
 {
+    ///[v0.0.3 (ADD# creocoder\nestedsets)]
+    public function behaviors() {
+        return [
+            \creocoder\nestedsets\NestedSetsQueryBehavior::className(),
+        ];
+    }
+
     /**
      * @inheritdoc
      * @return Category[]|array
