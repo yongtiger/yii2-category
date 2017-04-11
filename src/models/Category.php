@@ -20,7 +20,10 @@ use yongtiger\category\Module;
  * This is the model class for table "{{%category}}".
  *
  * @property int $id
- * @property string $title
+ * @property int $lft
+ * @property int $rgt
+ * @property int $depth
+ * @property string $name
  */
 class Category extends ActiveRecord
 {
@@ -58,8 +61,8 @@ class Category extends ActiveRecord
     public function rules()
     {
         return [
-            [['title'], 'required'],
-            [['title'], 'string', 'max' => 255],
+            [['name'], 'required'],
+            [['name'], 'string', 'max' => 255],
         ];
     }
 
@@ -70,7 +73,7 @@ class Category extends ActiveRecord
     {
         return [
             'id' => Module::t('message', 'ID'),
-            'title' => Module::t('message', 'Title'),
+            'name' => Module::t('message', 'Name'),
         ];
     }
 

@@ -8,7 +8,7 @@ use yongtiger\category\Module;
 
 $this->title = Module::t('message', 'Update Category: ') . $model->title;
 $this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Categories'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Module::t('message', 'Update');
 
 ?>

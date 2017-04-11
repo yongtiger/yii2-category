@@ -22,7 +22,7 @@ return [
 
 	///\vendor\yongtiger\yii2-category\src\models\Category.php
 	'ID' => 'ID',
-	'Title' => '名称',
+	'Name' => '名称',
 
 	///\vendor\yongtiger\yii2-category\src\views\default\index.php
 	'Categories' => '目录',

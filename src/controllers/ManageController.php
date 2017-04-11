@@ -72,7 +72,7 @@ class ManageController extends Controller
      */
     public function actionCreate()
     {
-        $model = Yii::createObject(Module::instance()->categoryModelClass);/////////
+        $model = Yii::createObject(Module::instance()->categoryModelClass); ///[v0.0.2 (CHG# Module config:model classes)]
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

@@ -7,7 +7,7 @@ use yongtiger\category\Module;
 /* @var $this yii\web\View */
 /* @var $model yongtiger\category\models\Category */
 
-$this->title = $model->title;
+$this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Categories'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'title',
+            'name',
         ],
     ]) ?>
 

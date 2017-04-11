@@ -12,5 +12,5 @@ use yii\helpers\Html;
 
 ?>
 <div data-id="<?= $key ?>" class="well">
-    <?= Html::a($model->title, ['/category/default/view', 'id' => $model->id]) ?>
+    <?= Html::a($model->name, ['/category/default/view', 'id' => $model->id]) ?>
 </div>

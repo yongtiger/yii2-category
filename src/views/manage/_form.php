@@ -13,7 +13,7 @@ use yongtiger\category\Module;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Module::t('message', 'Save'), ['class' => 'btn btn-success']) ?>
