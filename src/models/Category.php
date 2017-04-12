@@ -38,21 +38,24 @@ class Category extends ActiveRecord
     ///[v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)]
     public function behaviors() {
         return [
-            'tree' => [
-                'class' => \paulzi\nestedsets\NestedSetsBehavior::className(),
-                // 'treeAttribute' => 'tree',
-                // 'leftAttribute' => 'lft',
-                // 'rightAttribute' => 'rgt',
-                // 'depthAttribute' => 'depth',
+            // 'tree' => [
+            //     'class' => \paulzi\nestedsets\NestedSetsBehavior::className(),
+            //     // 'treeAttribute' => 'tree',
+            //     // 'leftAttribute' => 'lft',
+            //     // 'rightAttribute' => 'rgt',
+            //     // 'depthAttribute' => 'depth',
+            // ],
+            [
+                'class' => \paulzi\adjacencyList\AdjacencyListBehavior::className(),
             ],
         ];
     }
-    public function transactions()
-    {
-        return [
-            self::SCENARIO_DEFAULT => self::OP_ALL,
-        ];
-    }
+    // public function transactions()
+    // {
+    //     return [
+    //         self::SCENARIO_DEFAULT => self::OP_ALL,
+    //     ];
+    // }
     ///[http:www.brainbook.cc]
 
     /**
