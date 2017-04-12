@@ -1,4 +1,4 @@
-# yii2-category v0.06 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)
+# yii2-category v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-category/v/stable)](https://packagist.org/packages/yongtiger/yii2-category)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-category/downloads)](https://packagist.org/packages/yongtiger/yii2-category) 

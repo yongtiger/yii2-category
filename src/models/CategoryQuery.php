@@ -21,28 +21,6 @@ use yii\db\ActiveQuery;
  */
 class CategoryQuery extends ActiveQuery
 {
-    ///[v0.0.3 (ADD# creocoder\nestedsets)]
-    public function behaviors() {
-        return [
-            \creocoder\nestedsets\NestedSetsQueryBehavior::className(),
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     * @return Category[]|array
-     */
-    public function all($db = null)
-    {
-        return parent::all($db);
-    }
-
-    /**
-     * @inheritdoc
-     * @return Category|array|null
-     */
-    public function one($db = null)
-    {
-        return parent::one($db);
-    }
+    ///[v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)]
+    use \paulzi\nestedsets\NestedSetsQueryTrait;
 }

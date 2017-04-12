@@ -35,11 +35,11 @@ class Category extends ActiveRecord
         return Module::instance()->tableName;
     }
 
-    ///[v0.0.3 (ADD# creocoder\nestedsets)]
+    ///[v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)]
     public function behaviors() {
         return [
             'tree' => [
-                'class' => \creocoder\nestedsets\NestedSetsBehavior::className(),
+                'class' => \paulzi\nestedsets\NestedSetsBehavior::className(),
                 // 'treeAttribute' => 'tree',
                 // 'leftAttribute' => 'lft',
                 // 'rightAttribute' => 'rgt',
