@@ -1,5 +1,8 @@
 # Development roadmap
 
+## v0.06 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)
+
+
 ## v0.0.5 (TYPO#)
 
 
