@@ -37,7 +37,29 @@ class ManageController extends Controller
             ],
         ];
     }
+public function actions()
+{
+    $modelClass = 'yongtiger\category\models\Category';
 
+    return [
+        'moveNode' => [
+            'class' => 'voskobovich\tree\manager\actions\MoveNodeAction',
+            'modelClass' => $modelClass,
+        ],
+        'deleteNode' => [
+            'class' => 'voskobovich\tree\manager\actions\DeleteNodeAction',
+            'modelClass' => $modelClass,
+        ],
+        'updateNode' => [
+            'class' => 'voskobovich\tree\manager\actions\UpdateNodeAction',
+            'modelClass' => $modelClass,
+        ],
+        'createNode' => [
+            'class' => 'voskobovich\tree\manager\actions\CreateNodeAction',
+            'modelClass' => $modelClass,
+        ],
+    ];
+}
     /**
      * Lists all Category models.
      * @return mixed

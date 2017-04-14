@@ -1,5 +1,10 @@
 # Development roadmap
 
+## v0.0.7 (using yongtiger\tree\models\Tree)
+
+* `\models\Category.php`
+
+
 ## v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)
 
 

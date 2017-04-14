@@ -13,8 +13,11 @@
 namespace yongtiger\category\models;
 
 use Yii;
+use yii\helpers\Url;
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 use yongtiger\category\Module;
+use yongtiger\tree\models\Tree;
 
 /**
  * This is the model class for table "{{%category}}".
@@ -25,7 +28,7 @@ use yongtiger\category\Module;
  * @property int $depth
  * @property string $name
  */
-class Category extends ActiveRecord
+class Category extends Tree
 {
     /**
      * @inheritdoc
@@ -38,24 +41,24 @@ class Category extends ActiveRecord
     ///[v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)]
     public function behaviors() {
         return [
-            // 'tree' => [
-            //     'class' => \paulzi\nestedsets\NestedSetsBehavior::className(),
-            //     // 'treeAttribute' => 'tree',
-            //     // 'leftAttribute' => 'lft',
-            //     // 'rightAttribute' => 'rgt',
-            //     // 'depthAttribute' => 'depth',
-            // ],
-            [
-                'class' => \paulzi\adjacencyList\AdjacencyListBehavior::className(),
+            'tree' => [
+                'class' => \paulzi\nestedsets\NestedSetsBehavior::className(),
+                'treeAttribute' => 'tree',  ///multiple tree mode
+                // 'leftAttribute' => 'lft',
+                // 'rightAttribute' => 'rgt',
+                // 'depthAttribute' => 'depth',
             ],
+            // [
+            //     'class' => \paulzi\adjacencyList\AdjacencyListBehavior::className(),
+            // ],
         ];
     }
-    // public function transactions()
-    // {
-    //     return [
-    //         self::SCENARIO_DEFAULT => self::OP_ALL,
-    //     ];
-    // }
+    public function transactions()
+    {
+        return [
+            self::SCENARIO_DEFAULT => self::OP_ALL,
+        ];
+    }
     ///[http:www.brainbook.cc]
 
     /**

@@ -22,6 +22,6 @@ use yii\db\ActiveQuery;
 class CategoryQuery extends ActiveQuery
 {
     ///[v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)]
-    // use \paulzi\nestedsets\NestedSetsQueryTrait;
-    use \paulzi\adjacencyList\AdjacencyListQueryTrait;
+    use \paulzi\nestedsets\NestedSetsQueryTrait;
+    // use \paulzi\adjacencyList\AdjacencyListQueryTrait;
 }
