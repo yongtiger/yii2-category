@@ -57,7 +57,7 @@ class DefaultController extends Controller
      * Lists all Category models.
      * @return mixed
      */
-    public function actionIndex()///////////
+    public function actionIndex()
     {
         $items = \yongtiger\category\models\Category::getTree([
             'map' => function ($item) {
@@ -128,7 +128,20 @@ class DefaultController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();    ///?????deleteWithChildren
+        $this->findModel($id)->deleteWithChildren();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Deletes an existing Category model with its children.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDeleteWithChildren($id)
+    {
+        $this->findModel($id)->deleteWithChildren();
 
         return $this->redirect(['index']);
     }

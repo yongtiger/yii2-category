@@ -1,4 +1,4 @@
-# yii2-category v0.0.8 (re-construct)
+# yii2-category v0.0.9 (ADD# deleteWithChildren)
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-category/v/stable)](https://packagist.org/packages/yongtiger/yii2-category)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-category/downloads)](https://packagist.org/packages/yongtiger/yii2-category) 
