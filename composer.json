@@ -1,8 +1,8 @@
 {
     "name": "yongtiger/yii2-category",
-    "description": "",
+    "description": "Allows user to create multilevel category from their desire table for the Yii2.",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","category"],
+    "keywords": ["yii2","extension","category","multilevel","tree","manager"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/yongtiger/yii2-category/issues",
