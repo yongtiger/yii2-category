@@ -128,18 +128,18 @@ class DefaultController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->deleteWithChildren();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Deletes an existing Category model with its children.
+     * Deletes an existing Category model with its all children.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      */
-    public function actionDeleteWithChildren($id)
+    public function actionDeleteAll($id)
     {
         $this->findModel($id)->deleteWithChildren();
 
