@@ -1,6 +1,6 @@
 # Development roadmap
 
-## v0.0.9 (ADD# deleteall)
+## v0.0.9 (ADD# deleteAll)
 
 * `\controllers\DefaultController.php` (136)
 
