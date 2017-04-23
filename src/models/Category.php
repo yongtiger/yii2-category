@@ -13,9 +13,6 @@
 namespace yongtiger\category\models;
 
 use Yii;
-use yii\helpers\Url;
-use yii\db\ActiveRecord;
-use yii\helpers\ArrayHelper;
 use yongtiger\category\Module;
 use yongtiger\tree\models\Tree;
 
@@ -23,13 +20,12 @@ use yongtiger\tree\models\Tree;
  * This is the model class for table "{{%category}}".
  *
  * @property int $id
- * @property int $lft
- * @property int $rgt
- * @property int $depth
  * @property string $name
  */
 class Category extends Tree
 {
+    // use \yongtiger\tree\traits\TreeTrait;    ///you can use `\yongtiger\tree\models\TreeTrait` instead of extending from `\yongtiger\tree\models\Tree`
+
     /**
      * @inheritdoc
      */
@@ -37,29 +33,6 @@ class Category extends Tree
     {
         return Module::instance()->tableName;
     }
-
-    ///[v0.0.6 (replace creocoder/yii2-nested-sets with paulzi/yii2-adjacency-list, paulzi/yii2-nested-sets)]
-    public function behaviors() {
-        return [
-            'tree' => [
-                'class' => \paulzi\nestedsets\NestedSetsBehavior::className(),
-                'treeAttribute' => 'tree',  ///multiple tree mode
-                // 'leftAttribute' => 'lft',
-                // 'rightAttribute' => 'rgt',
-                // 'depthAttribute' => 'depth',
-            ],
-            // [
-            //     'class' => \paulzi\adjacencyList\AdjacencyListBehavior::className(),
-            // ],
-        ];
-    }
-    public function transactions()
-    {
-        return [
-            self::SCENARIO_DEFAULT => self::OP_ALL,
-        ];
-    }
-    ///[http:www.brainbook.cc]
 
     /**
      * @inheritdoc
@@ -81,15 +54,5 @@ class Category extends Tree
             'id' => Module::t('message', 'ID'),
             'name' => Module::t('message', 'Name'),
         ];
-    }
-
-    /**
-     * @inheritdoc
-     * @return CategoryQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        ///[v0.0.2 (CHG# Module config:model classes)]
-        return Yii::createObject(Module::instance()->categoryQueryClass, [get_called_class()]);
     }
 }

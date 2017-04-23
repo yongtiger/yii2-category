@@ -21,12 +21,7 @@
         "php": ">=5.5",
         "yiisoft/yii2": "*",
 
-        "yongtiger/yii2-tree-manager": "*",
-
-        
-        "paulzi/yii2-adjacency-list" : "^2.0",
-        "paulzi/yii2-nested-sets" : "^1.0"
-
+        "yongtiger/yii2-tree-manager": "*"
     },
     "autoload": {
         "psr-4": {

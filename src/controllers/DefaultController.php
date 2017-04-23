@@ -16,26 +16,121 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\data\ActiveDataProvider;
 use yongtiger\category\Module;
 
 /**
- * DefaultController implements the index/view actions for Category model.
+ * DefaultController implements the CRUD actions for Category model.
  */
 class DefaultController extends Controller
 {
     /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actions()
+    {
+        $modelClass = Module::instance()->modelClass;
+        return [
+            'move' => [
+                'class' => 'yongtiger\tree\actions\MoveAction',
+                'modelClass' => $modelClass,
+                'isMultipleTree' => true,
+            ],
+        ];
+    }
+
+    /**
      * Lists all Category models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex()///////////
     {
-        $searchModel = Yii::createObject(Module::instance()->categorySearchModelClass); ///[v0.0.2 (CHG# Module config:model classes)]
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
+        $items = \yongtiger\category\models\Category::getTree([
+            'map' => function ($item) {
+                return [
+                    'name' => $item['name'],
+                    // 'sort' => $item['sort'],     ///for adjacency-list
+                    // 'sort' => $item['lft'],      ///for nested-sets
+                    // 'icon' => 'fa fa-cog',
+                    // 'view-url' => ['category/default/view', 'id' => $item['id']],
+                    // 'update-url' => ['category/default/update', 'id' => $item['id']],
+                    // 'create-url' => ['category/default/create', 'id' => $item['id']],
+                    // 'delete-url' => ['category/default/delete', 'id' => $item['id']],
+                ];
+            },
+            // 'rootId' => 1,
+            // 'sortOrder' => SORT_DESC,
+            'itemsName' => 'nodes',
         ]);
+
+        return $this->render('index', ['items' => $items]);
+    }
+
+    /**
+     * Creates a new Category model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $model = Yii::createObject(Module::instance()->modelClass); ///[v0.0.2 (CHG# Module config:model classes)]
+        if ($model->load(Yii::$app->request->post())) {
+            ///[parentId]
+            $params = Yii::$app->getRequest()->getQueryParams();
+            $model->parentId = (int)$params['id'];
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        }
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Updates an existing Category model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Deletes an existing Category model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();    ///?????deleteWithChildren
+
+        return $this->redirect(['index']);
     }
 
     /**
@@ -60,8 +155,8 @@ class DefaultController extends Controller
     protected function findModel($id)
     {
         ///[v0.0.2 (CHG# Module config:model classes)]
-        $categoryModelClass = Module::instance()->categoryModelClass;
-        if (($model = $categoryModelClass::findOne($id)) !== null) {
+        $modelClass = Module::instance()->modelClass;
+        if (($model = $modelClass::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

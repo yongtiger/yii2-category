@@ -31,19 +31,10 @@ class Module extends \yii\base\Module
      */
     public $tableName = '{{%category}}';
 
-    ///[v0.0.2 (CHG# Module config:model classes)]
     /**
-     * @var string category model class name
+     * @var string model class name
      */
-    public $categoryModelClass = 'yongtiger\category\models\Category';
-    /**
-     * @var string category search model class name
-     */
-    public $categorySearchModelClass = 'yongtiger\category\models\categorySearch';
-    /**
-     * @var string category query class name
-     */
-    public $categoryQueryClass = 'yongtiger\category\models\CategoryQuery';
+    public $modelClass = 'yongtiger\category\models\Category';
 
     /**
      * @return static
