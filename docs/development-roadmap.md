@@ -3,6 +3,7 @@
 ## v0.0.9 (ADD# deleteAll)
 
 * `\controllers\DefaultController.php` (136)
+* `\views\default\index.php` (48)
 
 
 ## v0.0.8 (re-construct)

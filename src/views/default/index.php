@@ -13,12 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="category-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a(Module::t('message', 'Create Category'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= \yongtiger\tree\widgets\TreeView::widget([
         'nodes' => $items,
         // 'nodeActions' => [          ///optional
@@ -49,6 +43,17 @@ $this->params['breadcrumbs'][] = $this->title;
         //             ///for ajax
         //             // 'href' => 'javascript:void(0)', ///Note: It will override the 'href' of `nodeActionOptions`
         //             // 'data-url' => '{action-url}',   ///it will be replaced with the URL created using [[createUrl()]]
+        //         ],
+        //     ],
+        //     'delete-all' => [
+        //         'actionText' => '<span class="glyphicon glyphicon-trash"></span>',
+        //         'actionOptions' => [
+        //             'class' => 'btn btn-xs btn-danger',
+        //             'data-confirm' => 'Are you sure you want to delete this item and its children?', ///???i18n
+        //             'data-method' => 'post',
+        //             ///for ajax
+        //             // 'href' => 'javascript:void(0)', ///Note: It will override the 'href' of `nodeActionOptions`
+        //             // 'data-action-url' => '{action-url}',   ///it will be replaced with the URL created using [[createUrl()]]
         //         ],
         //     ],
         //     // more ...
