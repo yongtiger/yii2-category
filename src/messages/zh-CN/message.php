@@ -26,6 +26,7 @@ return [
 
 	///\vendor\yongtiger\yii2-category\src\views\default\index.php
 	'Categories' => '目录',
+	'Are you sure you want to delete this item and its children?' => '您确定要删除此项及全部子项吗？',
 
 	///\vendor\yongtiger\yii2-category\src\views\manage\_form.php
 	'Save' => '保存',

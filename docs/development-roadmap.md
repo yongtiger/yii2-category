@@ -1,5 +1,10 @@
 # Development roadmap
 
+## v0.0.10 (i18n)
+
+* `\views\default\index.php` (41, 52)
+
+
 ## v0.0.9 (ADD# deleteAll)
 
 * `\controllers\DefaultController.php` (136)

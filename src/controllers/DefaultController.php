@@ -128,8 +128,11 @@ class DefaultController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        try {
+            $this->findModel($id)->delete();
+        } catch (\Exception $e) {
+            $msg = \yii\base\ErrorHandler::convertExceptionToString($e);
+        }
         return $this->redirect(['index']);
     }
 
