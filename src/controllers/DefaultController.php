@@ -131,7 +131,7 @@ class DefaultController extends Controller
         try {
             $this->findModel($id)->delete();
         } catch (\Exception $e) {
-            $msg = \yii\base\ErrorHandler::convertExceptionToString($e);
+            Yii::$app->session->setFlash('error', $e->getMessage());
         }
         return $this->redirect(['index']);
     }
@@ -144,7 +144,11 @@ class DefaultController extends Controller
      */
     public function actionDeleteAll($id)
     {
-        $this->findModel($id)->deleteWithChildren();
+        try {
+            $this->findModel($id)->deleteWithChildren();
+        } catch (\Exception $e) {
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
 
         return $this->redirect(['index']);
     }

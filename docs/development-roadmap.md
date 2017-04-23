@@ -1,5 +1,10 @@
 # Development roadmap
 
+## v0.0.11 (ADD# exception in delete, deleteAll)
+
+* `\controllers\DefaultController.php` (132, 147)
+
+
 ## v0.0.10 (i18n)
 
 * `\views\default\index.php` (41, 52)
