@@ -1,4 +1,4 @@
-# yii2-category v0.0.12 (README)
+# yii2-category v0.0.13 (FIX# $model->parentId)
 
 Allows user to create multilevel category from their desire table for the Yii2.
 

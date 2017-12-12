@@ -91,7 +91,7 @@ class DefaultController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             ///[parentId]
             $params = Yii::$app->getRequest()->getQueryParams();
-            $model->parentId = (int)$params['id'];
+            $model->parentId = empty($params['id']) ? 0 : (int)$params['id'];
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
