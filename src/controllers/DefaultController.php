@@ -70,6 +70,8 @@ class DefaultController extends Controller
                     // 'update-url' => ['category/default/update', 'id' => $item['id']],
                     // 'create-url' => ['category/default/create', 'id' => $item['id']],
                     // 'delete-url' => ['category/default/delete', 'id' => $item['id']],
+                    // 'delete-all-url' => ['/category/default/delete-all', 'id' => $item['id']],
+                    // 'move-url' => ['/category/default/move', 'id' => $item['id']],
                 ];
             },
             // 'rootId' => 1,
